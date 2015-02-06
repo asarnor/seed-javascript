@@ -28,4 +28,12 @@ describe("Application", function() {
         expect(3682913).toBe(application.sumOfPrimes());
 
     });
+
+    it("should return the text in lower case characters", function() {
+
+        expect("to lowercase").toBe(application.toLowercase("TO LOWERCASE"));
+
+        expect("already lowercase").toBe(application.toLowercase("already lowercase"));
+
+    });
 });
