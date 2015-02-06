@@ -72,6 +72,16 @@ Application.prototype = {
         return lastVal;
     },
 
+    fib: function(numMax) {
+        var output = 0;
+        for (i = 0, j = 1, k = 1; k < numMax; i = j, j = x, k++) {
+            x = i + j;
+            output = x;
+            //console.log(x);
+        }
+        return output;
+    },
+
     readTextFileForLowercase: function(filePath) {
         //var filePath = 'http://www.matrixhandles.net/testing.txt';
         var xmlhttp;
