@@ -1,5 +1,6 @@
 describe("Application", function() {
     var application = new Application();
+    application.initQueryBoardArray();
 
     it("should determine if the input is prime", function() {
 
@@ -48,6 +49,17 @@ describe("Application", function() {
         expect(5).toBe(application.fib(5));
 
         expect(144).toBe(application.fib(12));
+
+    });
+
+    it("For each query, output the answer of the query", function() {
+
+		application.setCol(32,20);
+		application.setRow(15,7);
+		application.setRow(16,31);
+        expect(5118).toBe(application.getCol(32));
+        application.setCol(2,14);
+        expect(34).toBe(application.getRow(10));
 
     });
 });
