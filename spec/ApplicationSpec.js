@@ -42,4 +42,12 @@ describe("Application", function() {
         expect(144).toBe(application.multiplicationTable());
 
     });
+
+    it("Print to stdout, the fibonacci number, F(n)", function() {
+
+        expect(5).toBe(application.fib(5));
+
+        expect(144).toBe(application.fib(12));
+
+    });
 });
