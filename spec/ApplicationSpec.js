@@ -36,4 +36,10 @@ describe("Application", function() {
         expect("already lowercase").toBe(application.toLowercase("already lowercase"));
 
     });
+
+    it("should return 12 * 12 as last value from multiplation table", function() {
+
+        expect(144).toBe(application.multiplicationTable());
+
+    });
 });
