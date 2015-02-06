@@ -2,6 +2,8 @@ function Application() {};
 
 Application.prototype = {
 
+    matrix: new Array(256),
+
     isPalindrome: function(num) {
         var str = num.toString();
         var len = str.length;
@@ -78,6 +80,43 @@ Application.prototype = {
             x = i + j;
             output = x;
             //console.log(x);
+        }
+        return output;
+    },
+
+    initQueryBoardArray: function() {
+        for (a = 0; a < 256; a++) {
+            this.matrix[a] = new Array(256);
+            for (j = 0; j < 256; j++) {
+                this.matrix[a][j] = 0;
+            }
+        }
+    },
+
+    setCol: function(col, x) {
+        for (i = 0; i < 256; i++) {
+            this.matrix[i][col] = x;
+        }
+    },
+
+    setRow: function(row, x) {
+        for (i = 0; i < 256; i++) {
+            this.matrix[row][i] = x;
+        }
+    },
+
+    getCol: function(col) {
+        var output = 0;
+        for (i = 0; i < 256; i++) {
+            output += this.matrix[i][col];
+        }
+        return output;
+    },
+
+    getRow: function(row) {
+        var output = 0;
+        for (i = 0; i < 256; i++) {
+            output += this.matrix[row][i];
         }
         return output;
     },
