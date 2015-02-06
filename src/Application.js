@@ -37,5 +37,20 @@ Application.prototype = {
         }
         console.log(output);
         return output;
+    },
+
+    sumOfPrimes: function() {
+        var output = 0;
+        var count = 0;
+        var num = 0;
+        while (count < 1000) {
+            if (this.isPrime(num)) {
+                output += num;
+                count++;
+            }
+            num++;
+        }
+        console.log(output);
+        return output;
     }
 };
