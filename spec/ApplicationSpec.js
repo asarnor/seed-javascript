@@ -22,4 +22,10 @@ describe("Application", function() {
         expect(929).toBe(application.primePalindrome());
 
     });
+
+    it("should return the sum of prime numbers less than 1000", function() {
+
+        expect(3682913).toBe(application.sumOfPrimes());
+
+    });
 });
