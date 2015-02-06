@@ -31,7 +31,7 @@ Application.prototype = {
     primePalindrome: function() {
         var output;
         for (var i = 0; i < 1000; i++) {
-            if (isPalindrome(i) && isPrime(i)) {
+            if (this.isPalindrome(i) && this.isPrime(i)) {
                 output = i;
             }
         }
