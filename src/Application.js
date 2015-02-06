@@ -59,16 +59,29 @@ Application.prototype = {
         return str.toLowerCase();
     },
 
+    multiplicationTable: function() {
+        var lastVal;
+        for (var i = 1; i < 13; i++) {
+            var line = "";
+            for (var j = 1; j < 13; j++) {
+                line += (i * j) + " ";
+                lastVal = (i * j);
+            }
+            console.log(line);
+        }
+        return lastVal;
+    },
+
     readTextFileForLowercase: function(filePath) {
         //var filePath = 'http://www.matrixhandles.net/testing.txt';
         var xmlhttp;
         if (window.XMLHttpRequest) {
             xmlhttp = new XMLHttpRequest();
-        } else { 
+        } else {
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         if (xmlhttp != null) {
-            xmlhttp.open("GET", filePath, false); 
+            xmlhttp.open("GET", filePath, false);
             xmlhttp.send();
             var text = xmlhttp.responseText;
             var lines = text.split("\n");
