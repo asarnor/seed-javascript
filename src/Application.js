@@ -160,5 +160,30 @@ Application.prototype = {
                 this.fib(line);
             }
         }
+    },
+    readTextFileForQueryBoard: function(filePath) {
+        //var filePath = 'http://www.matrixhandles.net/testing.txt';
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if (xmlhttp != null) {
+            xmlhttp.open("GET", filePath, false);
+            xmlhttp.send();
+            var text = xmlhttp.responseText;
+            var lines = text.split("\n");
+            for (var n = 0; n < lines.length; ++n) {
+                var line = lines[n];
+                var objs = line.split(" ");
+                var fnstring = objs[0];
+                var fnparams = (objs.length>2 ? [objs[1],objs[2]] : objs[1]);
+                var fn = this[fnstring];
+                if (typeof fn === "function") {
+                    return fn.apply(null, fnparams);
+                } 
+            }
+        }
     }
 };
