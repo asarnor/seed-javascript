@@ -1,9 +1,6 @@
-function Application() {}
+function Application() {};
 
-Application.prototype.myFunction = function() {
-
-    //this will fail because null does not equal undefined
-    //return;
+Application.prototype = {
 
     isPalindrome: function(num) {
         var str = num.toString();
@@ -39,6 +36,6 @@ Application.prototype.myFunction = function() {
             }
         }
         console.log(output);
+        return output;
     }
-    return null;
 };
