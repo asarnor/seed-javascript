@@ -52,5 +52,31 @@ Application.prototype = {
         }
         console.log(output);
         return output;
+    },
+
+    toLowercase: function(arg) {
+        var str = arg.toString();
+        return str.toLowerCase();
+    },
+
+    readTextFileForLowercase: function(filePath) {
+        //var filePath = 'http://www.matrixhandles.net/testing.txt';
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else { 
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if (xmlhttp != null) {
+            xmlhttp.open("GET", filePath, false); 
+            xmlhttp.send();
+            var text = xmlhttp.responseText;
+            var lines = text.split("\n");
+            for (var n = 0; n < lines.length; ++n) {
+                var line = lines[n];
+                console.log(line);
+                this.toLowercase(line);
+            }
+        }
     }
 };
